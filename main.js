@@ -11,11 +11,56 @@ const rl = readline.createInterface({
 });
 
 
+
+
+// let positionOfFirstVowel = (word) => {
+//   for (let i = 0 ; i < word.length ; i++){
+
+//   let letter = word[i]
+  
+
+//   if(letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u'){
+//   return i 
+//   }
+//   else {
+
+//   }
+
+// console.log(positionOfFirstVowel('create'))
+// return -1
+
+
 const pigLatin = (word) => {
-
-  // Your code here
-
+ 
+  let string = word.trim().toLowerCase();
+  
+  let positionOfFirstVowel = () => {
+    
+  for (let i = 0 ; i < string.length ; i++){
+    let letter = string[i];
+    if(letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u'){
+    return i }
+    
+    }
+return -1
 }
+
+// console.log(positionOfFirstVowel(string));
+ 
+let index = positionOfFirstVowel(string)
+
+if(index === -1){
+  return string += 'ay'
+
+} else if (index === 0) {
+return string += 'yay'
+}
+else {
+  let slicey = string.slice(index) + string.slice(0,index) + 'ay';
+  return slicey
+}
+}
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
